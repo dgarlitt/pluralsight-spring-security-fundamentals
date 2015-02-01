@@ -17,10 +17,19 @@
 
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="daniel" password="secret" authorities="ROLE_USER" />
-            </user-service>
+            <jdbc-user-service data-source-ref="datasource" />
         </authentication-provider>
     </authentication-manager>
+
+    <beans:bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/fitnessTracker" />
+        <beans:property name="username" value="root" />
+        <beans:property name="password" value="" />
+    </beans:bean>
+
+    <beans:bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <beans:property name="dataSource" ref="datasource" />
+    </beans:bean>
 
 </beans:beans>

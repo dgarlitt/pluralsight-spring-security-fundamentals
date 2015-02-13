@@ -1,9 +1,3 @@
-spring_mvc_base
-===============
+Pluralsight - Spring Security Fundamentals
 
-Base project used for my Pluralsight Spring JPA and Spring Security courses among others.
-
-http://pluralsight.com/training/Courses/TableOfContents/maven-fundamentals
-
-http://pluralsight.com/training/Courses/TableOfContents/springmvc-intro
-
+There is a branch containing the completed code for each section of the tutorial that has a coding exercise
